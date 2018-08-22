@@ -2,6 +2,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 </head> 
 <style type="text/css">
 .empty_station{
@@ -96,7 +97,7 @@
 
 			$scope.getDataForBikeStation = function(pos, bikeStataionId){
 				epochinms =  (new Date).getTime();
-				$http.get("http://epok.buenosaires.gob.ar/getObjectContent/?callback=$scope.fun&id=estaciones_de_bicicletas|" + bikeStataionId + "&_=" + epochinms)
+				$http.get("https://epok.buenosaires.gob.ar/getObjectContent/?callback=$scope.fun&id=estaciones_de_bicicletas|" + bikeStataionId + "&_=" + epochinms)
 				.then(function(response) {
 					$scope.fun(response.data.contenido, response.data.fechaUltimaModificacion, pos);
 					//console.log(response.data);
